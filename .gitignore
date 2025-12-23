@@ -1,0 +1,9 @@
+# Python junk files
+__pycache__/
+*.pyc
+
+# Jupyter Notebook backups (Very important!)
+.ipynb_checkpoints
+
+# Streamlit secrets (Security best practice)
+.streamlit/secrets.toml
