@@ -2,11 +2,16 @@ import streamlit as st
 import pandas as pd
 import pickle
 import numpy as np
+import os
 
 # Load the trained model
 @st.cache_resource
 def load_model():
-    with open('../model/impact_model.pkl', 'rb') as file:
+    # Find the correct path of model
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    model_path = os.path.join(current_dir, "..", "model", "impact_model.pkl")
+    
+    with open(model_path, 'rb') as file:
         model = pickle.load(file)
     return model
 
